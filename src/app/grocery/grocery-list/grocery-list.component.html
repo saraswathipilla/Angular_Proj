@@ -5,15 +5,8 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <a href="#" class="list-group-item clearfix" *ngFor="let grocery of grocerys">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{ grocery.name}}</h4>
-                <p class="list-group-item-text">{{grocery.description}}</p>
-            </div>
-            <span class="pull-right">
-                <img [src]="grocery.imagePath" alt="{{grocery.name}}" class="img-responsive" style="max-height: 50px;">
-            </span>
-        </a>
-        <app-grocery-item></app-grocery-item>
+        <app-grocery-item 
+        *ngFor="let groceryEl of grocerys"
+        [grocery] = "groceryEl"></app-grocery-item>
     </div>
 </div>

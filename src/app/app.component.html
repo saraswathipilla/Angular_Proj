@@ -6,12 +6,12 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<app-header></app-header>
+<app-header (navCompSelected)="onNavigate($event)"></app-header>
 <div class="container">
     <div class="row">
         <div class="col-12-xs">
-            <app-grocery></app-grocery>
-            <app-wish-list></app-wish-list>
+            <app-grocery *ngIf="loadedComp === 'grocery'"></app-grocery>
+            <app-wish-list *ngIf="loadedComp !== 'grocery'"></app-wish-list>
         </div>
     </div>
 </div>
