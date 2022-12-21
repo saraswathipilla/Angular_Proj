@@ -10,6 +10,10 @@ import { GroceryDetailComponent } from './grocery/grocery-detail/grocery-detail.
 import { GroceryItemComponent } from './grocery/grocery-list/grocery-item/grocery-item.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { WishEditComponent } from './wish-list/wish-edit/wish-edit.component';
+import { appDropdownDirective } from './shared/dropdown.directive';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +23,8 @@ import { WishEditComponent } from './wish-list/wish-edit/wish-edit.component';
     GroceryDetailComponent,
     GroceryItemComponent,
     WishListComponent,
-    WishEditComponent
+    WishEditComponent,
+    appDropdownDirective
     
   ],
   imports: [

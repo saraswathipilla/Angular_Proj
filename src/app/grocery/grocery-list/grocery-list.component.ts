@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { GroceryService } from '../grocery.service';
+
 import { Grocery } from '../grocery.model';
+
 
 @Component({
   selector: 'app-grocery-list',
   templateUrl: './grocery-list.component.html',
-  styleUrls: ['./grocery-list.component.css']
+  styleUrls: ['./grocery-list.component.css'],
 })
 export class GroceryListComponent implements OnInit {
-  grocerys : Grocery[] = [
-    new Grocery("grocery Name","Grosery Description","https://m.media-amazon.com/images/I/51dE378i-zL._SX522_.jpg"), 
-    new Grocery("grocery Name1","Grosery Description1","https://m.media-amazon.com/images/I/51dE378i-zL._SX522_.jpg")
-  ];
-  constructor() { }
-
+  // @Output() wasEmittedList = new EventEmitter<Grocery>()
+  grocerys: Grocery[];
+  // @Input() grocerys: Grocery
+  constructor(private groceryService : GroceryService) { }
   ngOnInit(): void {
+    this.grocerys = this.groceryService.grocerys;
   }
-
 }

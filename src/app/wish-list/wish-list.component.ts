@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Ingredient } from '../shared/ingredient.model';
+import { WishListService } from './wish-list.service';
 @Component({
   selector: 'app-wish-list',
   templateUrl: './wish-list.component.html',
-  styleUrls: ['./wish-list.component.css']
+  styleUrls: ['./wish-list.component.css'],
+  providers: [WishListService]
 })
 export class WishListComponent implements OnInit {
-ingredients:Ingredient[] = [
-  new Ingredient('Apples',10),
-  new Ingredient('Mangoes',15)
-];
-  constructor() { }
+  ingredients: Ingredient[]
 
+
+  constructor(private wishlistService : WishListService) { }
+  
   ngOnInit(): void {
+    this.ingredients = this.wishlistService.getIngriedents()
   }
-
+  
 }
