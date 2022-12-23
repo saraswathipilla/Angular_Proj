@@ -16,6 +16,6 @@ export class GroceryListComponent implements OnInit {
   // @Input() grocerys: Grocery
   constructor(private groceryService : GroceryService) { }
   ngOnInit(): void {
-    this.grocerys = this.groceryService.grocerys;
+    this.grocerys = this.groceryService.getGroceries();
   }
 }

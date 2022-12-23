@@ -8,7 +8,7 @@ import { WishListService } from '../wish-list.service';
   styleUrls: ['./wish-edit.component.css']
 })
 export class WishEditComponent implements OnInit {
-  @Output() EmitWish = new EventEmitter<Ingredient>();
+  // @Output() EmitWish = new EventEmitter<Ingredient>();
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('amountInput') amountInputRef: ElementRef;
   constructor(private wishlistService: WishListService) { }

@@ -17,7 +17,7 @@
             >Manage Grocery<span class="caret"></span>
            </button>
            <ul class="dropdown-menu">
-               <li><a href="#">To Grocery List</a></li>
+               <li><a href="#" (click)="onClickAddIng()">To Grocery List</a></li>
                <li><a href="#">Edit Grocery</a></li>
                <li><a href="#">Delete Grocery</a></li>
             </ul>
@@ -31,6 +31,10 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Type Of Grocery
+        <ul class="list-group">
+            <li  class="list-group-item" *ngFor="let ingrdient of grocery.ingredient">
+                {{ingrdient.name}} - {{ingrdient.amount}}
+            </li>
+        </ul>
     </div>
 </div>

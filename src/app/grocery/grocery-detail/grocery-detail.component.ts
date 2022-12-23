@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { WishListService } from 'src/app/wish-list/wish-list.service';
 import { Grocery } from '../grocery.model';
+import { GroceryService } from '../grocery.service';
 
 @Component({
   selector: 'app-grocery-detail',
@@ -8,9 +10,12 @@ import { Grocery } from '../grocery.model';
 })
 export class GroceryDetailComponent implements OnInit {
   @Input() grocery : Grocery
-  constructor() { }
+  constructor(private groceryService : GroceryService) { }
 
   ngOnInit(): void {
+  }
+  onClickAddIng(){
+    this.groceryService.getIngtoWishlist(this.grocery.ingredient)
   }
   
 }

@@ -11,6 +11,7 @@ import { GroceryItemComponent } from './grocery/grocery-list/grocery-item/grocer
 import { WishListComponent } from './wish-list/wish-list.component';
 import { WishEditComponent } from './wish-list/wish-edit/wish-edit.component';
 import { appDropdownDirective } from './shared/dropdown.directive';
+import { WishListService } from './wish-list/wish-list.service';
 
 
 
@@ -33,7 +34,7 @@ import { appDropdownDirective } from './shared/dropdown.directive';
 
 
   ],
-  providers: [],
+  providers: [WishListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
