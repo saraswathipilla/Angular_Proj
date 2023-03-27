@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { WishListService } from './wish-list.service';
 @Component({
@@ -8,15 +8,16 @@ import { WishListService } from './wish-list.service';
   providers: [WishListService]
 })
 export class WishListComponent implements OnInit {
-  List: Ingredient[];
+  @Input() ingredients: Ingredient[];
   constructor(private wishlistService: WishListService) { }
   
   
   ngOnInit() {
-    this.List = this.wishlistService.getIngriedents()
+    this.ingredients = this.wishlistService.getIngriedents()
     this.wishlistService.ingredientsChanged.subscribe(
       (ingredients: Ingredient[]) => {
-        this.List = ingredients; 
+        this.ingredients = ingredients;
+        console.log(this.ingredients,"Listt")
       }
     );
   }

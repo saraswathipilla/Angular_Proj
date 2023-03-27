@@ -4,14 +4,15 @@ import { Ingredient } from "../shared/ingredient.model";
 
 export class WishListService{
   ingredientsChanged = new EventEmitter<Ingredient[]>();
-  IngList: Ingredient[] = []
   private ingredients:Ingredient[] = [
     new Ingredient('Apples',10),
     new Ingredient('Mangoes',15)
   ];
     
   getIngriedents = () => {
+    console.log(this.ingredients)
     return this.ingredients
+    
   }
       
 
